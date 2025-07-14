@@ -241,8 +241,8 @@ cbar.ax.yaxis.label.set_size(cbar_title_textsize)
 plt.tight_layout()
 
 # 7) Save outputs
-plt.savefig('plots/kendall_correlation_heatmap.jpeg', dpi=300, format='jpeg', bbox_inches='tight')
-plt.savefig('plots/kendall_correlation_heatmap.pdf',  dpi=300, format='pdf', bbox_inches='tight')
+plt.savefig('kendall_correlation_heatmap.jpeg', dpi=300, format='jpeg', bbox_inches='tight')
+plt.savefig('kendall_correlation_heatmap.pdf',  dpi=300, format='pdf', bbox_inches='tight')
 plt.show()
 
 
