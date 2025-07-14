@@ -1,7 +1,7 @@
 """
 WC17: Generate Line Plots with error bars for Mixed layer trace metal concentrations
 
-This script is related to the manuscript by Viljoen et al. (Preprint). 
+This script is related to the manuscript by Viljoen et al. 
 For more details, refer to the project ReadMe: https://github.com/jjviljoen/Winter2017_PhytoNutrients_Python.
 
 ### Description
@@ -12,7 +12,7 @@ For more details, refer to the project ReadMe: https://github.com/jjviljoen/Wint
 Johan Viljoen - j.j.viljoen@exeter.ac.uk
 
 ### Last Updated
-20 Jan 2025
+14 July 2025
 """
 
 #%%
@@ -395,8 +395,8 @@ ax8.invert_xaxis()
 plt.tight_layout()
 
 # Save the plot to a PNG file with 300dpi and tight border
-plt.savefig('plots/WC17_TM_LinePlot_TM_all_MedianMAD.jpeg', dpi=300, bbox_inches='tight')
-plt.savefig('plots/WC17_TM_LinePlot_TM_all_MedianMAD.png', dpi=300, bbox_inches='tight')
+plt.savefig('WC17_TM_LinePlot_TM_all_MedianMAD.jpeg', dpi=300, bbox_inches='tight')
+plt.savefig('WC17_TM_LinePlot_TM_all_MedianMAD.pdf', dpi=300, format = 'pdf',bbox_inches='tight')
 
 plt.show()
 
