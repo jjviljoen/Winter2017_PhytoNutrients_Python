@@ -1,7 +1,7 @@
 """
 WC17: Generate Bar Plots for Phytoplankton composition - Concentration and Percentage
 
-This script is related to the manuscript by Viljoen et al. (Preprint). 
+This script is related to the manuscript by Viljoen et al. 
 For more details, refer to the project ReadMe: https://github.com/jjviljoen/Winter2017_PhytoNutrients_Python.
 
 ### Description
@@ -12,7 +12,7 @@ For more details, refer to the project ReadMe: https://github.com/jjviljoen/Wint
 Johan Viljoen - j.j.viljoen@exeter.ac.uk
 
 ### Last Updated
-20 Jan 2025
+14 July 2025
 """
 
 #%%
@@ -172,7 +172,7 @@ ax.legend(handles, legend_items, loc='upper center', fontsize=legendsize,
 
 # Save the plot to a PNG file with 300dpi and tight border
 plt.savefig('WC17_stacked_bar_plot.png', dpi=300, bbox_inches='tight')
-plt.savefig('WC17_stacked_bar_plot.pdf', dpi=300, bbox_inches='tight')
+plt.savefig('WC17_stacked_bar_plot.pdf', dpi=300, format = 'pdf',bbox_inches='tight')
 
 # Display the plot
 plt.show()
@@ -309,6 +309,7 @@ axs[1].legend(handles, legend_items, loc='lower center', fontsize=legendsize,
 
 # Save the plot to a PNG file with 300dpi and tight border
 plt.savefig('WC17_Phyto_Vertical_BarPlot_ZoneAvg.jpeg', dpi=300, bbox_inches='tight')
+plt.savefig('WC17_Phyto_Vertical_BarPlot_ZoneAvg.pdf', dpi=300, format = 'pdf',bbox_inches='tight')
 
 # Display the plot
 plt.show()
@@ -533,6 +534,7 @@ fig.legend(handles, legend_items, loc='lower center', fontsize=legendsize,
 
 # Save the plot to a PNG file with 300dpi and tight border
 plt.savefig('WC17_Phyto_Vertical_BarPlot_Stations.jpeg', dpi=300, bbox_inches='tight')
+plt.savefig('WC17_Phyto_Vertical_BarPlot_Stations.pdf', format = 'pdf', dpi=300, bbox_inches='tight')
 
 # Display the plot
 plt.show()
