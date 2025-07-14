@@ -1,7 +1,7 @@
 """
 WC17: Generate Correlation Tables for Winter 2017 phytoplankton & trace metal paralel sampled in upper 150m
 
-This script analyzes data related to the manuscript by Viljoen et al. (Preprint). 
+This script analyzes data related to the manuscript by Viljoen et al. LINK 
 For more details, refer to the project ReadMe: https://github.com/jjviljoen/Winter2017_PhytoNutrients_Python.
 
 ### Description
@@ -13,7 +13,7 @@ For more details, refer to the project ReadMe: https://github.com/jjviljoen/Wint
 Johan Viljoen - j.j.viljoen@exeter.ac.uk
 
 ### Last Updated
-20 Jan 2025
+14 July 2025
 """
 
 #%%
@@ -156,5 +156,95 @@ significant_matrix = significant_matrix[['Nutrients'] + [col for col in signific
 #Save Table to Excel
 output_filename = 'WC17_kendall_PaperTable.xlsx'
 significant_matrix.to_excel(output_filename, index=False)
+
+#%%
+
+### TABLE WITH CORR HEATMAP ###
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# === User‑tweakable settings ===
+annotation_textsize = 11   # size for the τ+stars annotations
+label_textsize      = 12   # size for tick labels
+cbar_tick_textsize       = 12   # size for the colorbar label & ticks
+cbar_title_textsize = 14      # size for the colorbar title (the τ symbol)
+# Custom short names for the 10 columns (phytoplankton groups)
+custom_columns = [
+    'Tchla', 'Diatoms', 'Phaeo', 'Cocco', 'Dino',
+    'Crypto', 'Pelago', 'Prasino', 'Chloro', 'Cyano'
+]
+# ================================
+
+# --- assume corr_tbl_paper and p_tbl_paper are already defined ---
+
+# 1) Build your annotation strings (τ rounded + stars)
+def significance_stars(p):
+    if pd.isnull(p):       return ''
+    if p < 0.001:          return '***'
+    if p < 0.01:           return '**'
+    if p < 0.05:           return '*'
+    return ''
+
+stars = p_tbl_paper.applymap(significance_stars)
+annot = corr_tbl_paper.round(2).astype(str).replace('nan','') + stars
+annot = annot.fillna('')
+
+# 2) Plot the heatmap without seaborn’s annot
+fig, ax = plt.subplots(figsize=(12, 8))
+sns.heatmap(
+    corr_tbl_paper,
+    cmap='vlag',
+    center=0,
+    annot=False,
+    linewidths=0.5,
+    cbar_kws={
+        'label': r"Kendall’s $\tau$",
+        'pad': 0.02
+    },
+    ax=ax
+)
+
+# 3) Manually annotate each cell
+n_rows, n_cols = corr_tbl_paper.shape
+for i in range(n_rows):
+    for j in range(n_cols):
+        txt = annot.iat[i, j]
+        if not txt:
+            continue
+        weight = 'bold' if '*' in txt else 'normal'
+        ax.text(
+            j + 0.5,
+            i + 0.5,
+            txt,
+            ha='center', va='center',
+            color='black',
+            fontsize=annotation_textsize,
+            fontweight=weight
+        )
+
+# 4) Move x‑labels to top and set custom labels + sizes
+ax.xaxis.tick_top()
+ax.set_xticks(np.arange(n_cols) + 0.5)
+ax.set_xticklabels(custom_columns, rotation=0, ha='center', fontsize=label_textsize)
+
+# 5) Y‑labels
+ax.set_yticklabels(corr_tbl_paper.index, rotation=0, fontsize=label_textsize)
+
+# 6) Adjust colorbar font sizes
+cbar = ax.collections[0].colorbar
+cbar.ax.yaxis.set_tick_params(labelsize=cbar_tick_textsize)
+cbar.ax.yaxis.label.set_size(cbar_title_textsize)
+
+plt.tight_layout()
+
+# 7) Save outputs
+plt.savefig('plots/kendall_correlation_heatmap.jpeg', dpi=300, format='jpeg', bbox_inches='tight')
+plt.savefig('plots/kendall_correlation_heatmap.pdf',  dpi=300, format='pdf', bbox_inches='tight')
+plt.show()
+
+
 
 
