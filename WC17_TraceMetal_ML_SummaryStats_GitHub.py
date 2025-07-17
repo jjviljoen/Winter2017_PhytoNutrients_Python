@@ -13,7 +13,7 @@ For more details, refer to the project ReadMe: https://github.com/jjviljoen/Wint
 Johan Viljoen - j.j.viljoen@exeter.ac.uk
 
 ### Last Updated
-20 Jan 2025
+17 July 2025
 """
 
 # %%
@@ -205,7 +205,7 @@ tbl_pTm_lith.to_excel(output_filename, index=False)
 
 pTM_df.info()
 
-tbl_summary_median = av_table(pTM_df, summary_type='median', d=1)
+tbl_summary_median = av_table(pTM_df, summary_type='median', d=2)
 
 tbl_summary_median.info()
 
