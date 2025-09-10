@@ -7,3 +7,13 @@ Included are Python scripts for processing and analyzing data collected during t
 The compilation of original data used for the upper 150m (i.e. matched phytoplankton data) and compilation of trace metal data used for the upper 250m can be found in a Zenodo repository at https://doi.org/10.5281/zenodo.6615070 (Viljoen et al., 2025).
 
 Each script contains a short description at the start.
+
+## Citation
+
+If you use this code, please cite:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16025351.svg)](https://doi.org/10.5281/zenodo.16025351)
+
+## License
+
+This repository is licensed under the [GNU General Public License v3.0](LICENSE), ensuring that the software remains free and open, with the source code available for transparency and modification.
