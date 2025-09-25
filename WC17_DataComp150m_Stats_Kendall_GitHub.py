@@ -165,6 +165,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+# Use the default Matplotlib style
+plt.style.use('default')
+
+# Set the default font to Arial
+plt.rcParams['font.family'] = 'Arial'
 
 # === User‑tweakable settings ===
 annotation_textsize = 11   # size for the τ+stars annotations
@@ -173,7 +178,7 @@ cbar_tick_textsize       = 12   # size for the colorbar label & ticks
 cbar_title_textsize = 14      # size for the colorbar title (the τ symbol)
 # Custom short names for the 10 columns (phytoplankton groups)
 custom_columns = [
-    'Tchla', 'Diatoms', 'Phaeo', 'Cocco', 'Dino',
+    'Tchl-a', 'Diatoms', 'Phaeo', 'Cocco', 'Dino',
     'Crypto', 'Pelago', 'Prasino', 'Chloro', 'Cyano'
 ]
 # ================================
