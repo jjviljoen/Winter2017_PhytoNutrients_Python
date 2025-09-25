@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16025351.svg)](https://doi.org/10.5281/zenodo.16025351)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16025350.svg)](https://doi.org/10.5281/zenodo.16025350)
 # Winter2017_PhytoNutrients_Python
 This GitHub repository is related to the Preprint by Viljoen et al.: "Winter dynamics of phytoplankton and micronutrients in the Southern Ocean" available on ESS Open Archive at: https://doi.org/10.22541/essoar.173884384.49518335/v1.
 
@@ -12,7 +12,7 @@ Each script contains a short description at the start.
 
 If you use this code, please cite:
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16025351.svg)](https://doi.org/10.5281/zenodo.16025351)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16025350.svg)](https://doi.org/10.5281/zenodo.16025350)
 
 ## License
 
