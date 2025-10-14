@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16025350.svg)](https://doi.org/10.5281/zenodo.16025350)
 # Winter2017_PhytoNutrients_Python
-This GitHub repository is related to the Preprint by Viljoen et al.: "Winter dynamics of phytoplankton and micronutrients in the Southern Ocean" available on ESS Open Archive at: https://doi.org/10.22541/essoar.173884384.49518335/v1.
+This GitHub repository is related to the published manuscript by Viljoen et al. (2025): "Winter dynamics of phytoplankton and micronutrients in the Southern Ocean" in JGR Oceans at: [https://doi.org/10.1029/2025JC022431](https://doi.org/10.1029/2025JC022431).
 
 Included are Python scripts for processing and analyzing data collected during the Winter 2017 Cruise aboard the SA Agulhas II. The scripts are used to do statistical analyses and generate figures.
 
